@@ -306,7 +306,6 @@ weather_tidy <- raw %>%
 weather_tidy
 ```
 
-
 # DPLYR
 
 ## Introducción y objetivos.
@@ -364,10 +363,22 @@ En nuestro estudio queremos aplicar una serie de criterios de exclusión sobre l
 - Nota: Revisar el uso de la función filter vista en clase y tener en cuenta los operadores de comparación: igual ==, distinto !=, mayor \>, mayor o igual \>=, menor \<, menor o igual \<=.
 
 ```{r }
+planes.f <- planes %>%
+  
+  filter(manufacturer != "MCDONNELL DOUGLAS" & 
+         manufacturer != "MCDONNELL DOUGLAS CORPORATION") %>%
+  
+  filter(seats >= 90 & seats <= 210) %>%
+  
+  mutate(manufacturer = ifelse(manufacturer %in% c("AIRBUS", "AIRBUS INDUSTRIE"),  "AIRBUS COMP", manufacturer))
 
+head(planes.f)
+```
 
+```{r}
 
 ```
+
 
 ### Ejercicio 7
 
