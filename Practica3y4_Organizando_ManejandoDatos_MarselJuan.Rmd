@@ -235,7 +235,16 @@ Obtén la versión *tidy* de este conjunto de datos usando `pivot_longer`.
 Consejo: puedes eliminar el prefijo `wk` de las semanas mediante el argumento `names_prefix`. Opcionalmente puedes crear una columna `date` a partir de `date.entered`, sumando las semanas transcurridas desde la fecha de entrada en lista.
 
 ```{r}
+library(tidyr)
 
+billboard_tidy <-raw %>%
+  pivot_longer(
+  cols = wk1:wk76,
+  names_to = "week",
+  values_to = "rank",
+  names_prefix = "wk"
+)
+billboard_tidy
 ```
 
 ## Varias variables en una misma columna
