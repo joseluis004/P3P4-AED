@@ -349,8 +349,13 @@ load("./data/VuelosNY.Rdata")
 Muestra las primeras muestras de ambos data frames para hacerte una idea de las variables que contienen. ¿Qué diferencia existe entre la información mostrada en ambos data frames?
 
 ```{r }
-
+head(flights)
+head(planes)
 ```
+
+La pcon susrimera tabla guarda el historial de los viajes. Registra cada vuelo que despega día a día, con sus horarios y minutos de retraso.
+
+La segunda tabla guarda el catálogo de los aviones. Registra los datos de fábrica de cada máquina, como su marca, modelo, número de motores, etc.
 
 ### Ejercicio 6
 
