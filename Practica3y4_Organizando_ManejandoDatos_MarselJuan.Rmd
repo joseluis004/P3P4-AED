@@ -377,14 +377,13 @@ head(planes.f)
 
 ### Ejercicio 7
 
-Crea un data frame denominado `flights.f` que contenga los vuelos que involucren a los aviones presentes en el data frame `planes.f`. Para ello utiliza algunas de las funciones de **XXX_join** y la variable `tailnum` que es común en ambos data frames. 
+Crea un data frame denominado `flights.f` que contenga los vuelos que involucren a los aviones presentes en el data frame `planes.f`. Para ello utiliza algunas de las funciones de **XXX_join** y la variable `tailnum` que es común en ambos data frames.
 
 ```{r }
 flights.f <- flights %>%
   semi_join(planes.f, by = "tailnum")
 flights.f
 ```
-
 
 ### Ejercicio 8
 
@@ -403,7 +402,11 @@ Existen variables que, a priori, no tienen demasiado interés para el estudio qu
 - En el data frame `planes` quédate con todas las variables excepto `speed` y `type`.
 
 ```{r }
+flights <- flights %>%
+  select(-time_hour, -ends_with("time"))
 
+planes <- planes %>%
+  select(-speed, -type)
 ```
 
 ### Ejercicio 10
